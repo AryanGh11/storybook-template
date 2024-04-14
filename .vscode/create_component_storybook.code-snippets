@@ -1,0 +1,40 @@
+{
+  "Dynamic Component Import": {
+    "prefix": "sb",
+    "body": [
+      "import \"src/index.css\";",
+      "import Component from \"../components/Component\";",
+      "",
+      "import { Meta, StoryObj } from \"@storybook/react\";",
+      "",
+      "const meta: Meta<typeof Component> = {",
+      "\ttitle: \"Component\",",
+      "\tcomponent: Component,",
+      "\targTypes: {",
+      "\t\tvalue: {",
+      "\t\t\ttype: {",
+      "\t\t\t\tname: \"string\",",
+      "\t\t\t\trequired: true,",
+      "\t\t\t},",
+      "\t\t\tdefaultValue: null,",
+      "\t\t},",
+      "}}",
+      "",
+      "export default meta;",
+      "type Story = StoryObj<typeof meta>;",
+      "",
+      "export const CreateMode: StoryObj<typeof meta> = {",
+      "\targs: {",
+      "\t\tid: \"1\",",
+      "\t\tkey: \"1\",",
+      "\t\tplaceholder: \"Placeholder\",",
+      "\t\tvalue: \"\",",
+      "\t\tonInputChange: () => {},",
+      "\t\tdisabled: false,",
+      "\t\tonDisabledChange: () => {},",
+      "\t},",
+      "}"
+    ],
+    "description": "Creates a Storybook meta and story with a dynamic Component import"
+  }
+}
